@@ -80,43 +80,22 @@ int altaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServ
             if ( !validarEntero(&auxMicro.idEmpresa, "Ingrese id de Empresa: ", "Error, ingrese un id de empresa valido: ", empresas[0].id, empresas[tamE-1].id, 10)  )
             {
                 printf("\nError al ingresar id de Empresa, id ingresado por default: %d\n", empresas[0].id);
-                auxMicro.id = empresas[0].id;
+                auxMicro.idEmpresa = empresas[0].id;
 
             }
-            //printf("Ingrese id de marca: ");
-            //scanf("%d", &auxAuto.idMarca);
-            //while ( !validarIdMarca(auxAuto.idMarca, empresas, tamE) )
-           // {
-              //  printf("Error, ingrese id de marca valido: ");
-              //  scanf("%d", &auxAuto.idMarca);
-            //}
 
             mostrarTipoServicio(tipoServicios, tamT);
-            printf("Ingrese id de tipo de coche: ");
-            scanf("%d", &auxMicro.idTipo);
-            while ( !validarIdTipoServicio(auxMicro.idTipo, tipoServicios, tamT) )
+            if ( !validarEntero(&auxMicro.idTipo, "Ingrese id de tipo de coche: ", "Error, ingrese un id de tipo de coche valido: ", tipoServicios[0].id, tipoServicios[tamT-1].id, 10)  )
             {
-                printf("Error, ingrese id de tipo de coche valido: ");
-                scanf("%d", &auxMicro.idTipo);
+                printf("\nError al ingresar id de tipo de coche, id ingresado por default: %d\n", tipoServicios[0].id);
+                auxMicro.idTipo = tipoServicios[0].id;
             }
 
-            if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ): ", 1, 50, 10)  )
+           if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ): ", 1, 50, 10)  )
             {
                 printf("\nError al ingresar la cantidad de pasajeros, cantidad ingresada por default: %d\n", 1);
                 auxMicro.capacidad = 1;
-
             }
-
-
-            /*printf("Ingrese la cantidad de pasajeros ( 1 - 50 ) : ");
-            scanf("%d", &auxMicro.capacidad);
-            while ( auxAuto.caja != 'a' && auxAuto.caja != 'm' )
-            {
-                printf("Error, ingrese tipo de caja valido ('m' manual / 'a' automatica): ");
-                fflush(stdin);
-                scanf("%d", &auxAuto.idColor);
-                auxAuto.caja = tolower(auxAuto.caja);
-            }*/
 
             auxMicro.isEmpty = 0;
 

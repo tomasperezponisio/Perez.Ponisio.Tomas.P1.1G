@@ -32,7 +32,7 @@
 
 1634941054 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tipo.h
 
-1634949015 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.c
+1634949453 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,7 +53,7 @@
 
 1634943060 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tiposervicio.h
 
-1634949354 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\main.c
+1634950265 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -64,7 +64,7 @@
 	"destino.h"
 	"viaje.h"
 
-1634948583 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.c
+1634950436 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
