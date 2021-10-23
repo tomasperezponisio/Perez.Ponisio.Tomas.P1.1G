@@ -1,0 +1,89 @@
+# depslib dependency file v1.0
+1634934420 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\bibliotecapersonal.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"BibliotecaPersonal.h"
+
+1634934420 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\bibliotecapersonal.h
+
+1634946255 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destino.h"
+
+1634939496 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.c
+
+1634941987 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\empresa.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empresa.h"
+
+1634940741 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\empresa.h
+
+1634943060 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1634941054 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tipo.h
+
+1634949015 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viaje.h"
+
+1634944909 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\datawarehouse.c
+	<string.h>
+	"dataWarehouse.h"
+
+1634941362 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\datawarehouse.h
+	"micro.h"
+	"empresa.h"
+	"tipo.h"
+
+1634948583 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.h
+	"empresa.h"
+	"tipoServicio.h"
+
+1634943060 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tiposervicio.h
+
+1634949354 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"dataWarehouse.h"
+	"micro.h"
+	"empresa.h"
+	"tipoServicio.h"
+	"destino.h"
+	"viaje.h"
+
+1634948583 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"micro.h"
+	"bibliotecaPersonal.h"
+
+1634943059 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tiposervicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipoServicio.h"
+
+1634946250 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.h
+
+1634948919 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.h
+	"fecha.h"
+	"micro.h"
+	"destino.h"
+
+1634939857 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.h
+
