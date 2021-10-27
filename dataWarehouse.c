@@ -26,3 +26,37 @@ int hardcodearMicros( eMicro lista[], int tam, int cant, int* pId )
     }
     return contador;
 }
+
+int idMicro[10] = { 100, 101, 102, 103, 104, 105, 106, 107, 108, 109};
+
+int idDestino[10] = { 20000, 20001, 20002, 20003, 20002, 20001, 20002, 20000, 20003, 20000};
+
+int fechasDia[10] =  {20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
+
+int fechasMes[10] = {02, 02, 02, 02, 02, 02, 02, 02, 02, 02};
+
+int fechasAnio[10] = {2003, 2005, 2007, 2000, 2000, 2000, 2000, 2000, 2000, 2000};
+
+int hardcodearViajes( eViaje viajes[], int tamV, int cant, int* pId )
+{
+    int contador = -1;
+    if (viajes != NULL && tamV > 0 && cant >= 0 && cant <= tamV && pId != NULL)
+    {
+        contador = 0;
+        for (int i = 0; i < cant;  i++)
+        {
+            viajes[i].id = *pId;
+            (*pId)++;
+            viajes[i].idMicro = idMicro[i];
+            viajes[i].idDestino = idDestino[i];
+            viajes[i].fecha.dia = fechasDia[i];
+            viajes[i].fecha.mes = fechasMes[i];
+            viajes[i].fecha.anio = fechasAnio[i];
+            viajes[i].isEmpty = 0;
+            contador++;
+        }
+    }
+    return contador;
+}
+
+

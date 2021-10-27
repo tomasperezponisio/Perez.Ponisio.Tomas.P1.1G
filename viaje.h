@@ -13,7 +13,6 @@ typedef struct
     eFecha fecha;
     int isEmpty;
 
-
 }eViaje;
 
 

@@ -77,7 +77,8 @@ int altaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServ
             (*pId)++;
 
             mostrarEmpresas(empresas, tamE);
-            if ( !validarEntero(&auxMicro.idEmpresa, "Ingrese id de Empresa: ", "Error, ingrese un id de empresa valido: ", empresas[0].id, empresas[tamE-1].id, 10)  )
+
+            if ( !validarEntero(&auxMicro.idEmpresa, "Ingrese id de Empresa: ", "Error, ingrese un id de empresa valido.\n ", empresas[0].id, empresas[tamE-1].id, 10)  )
             {
                 printf("\nError al ingresar id de Empresa, id ingresado por default: %d\n", empresas[0].id);
                 auxMicro.idEmpresa = empresas[0].id;
@@ -85,13 +86,13 @@ int altaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServ
             }
 
             mostrarTipoServicio(tipoServicios, tamT);
-            if ( !validarEntero(&auxMicro.idTipo, "Ingrese id de tipo de coche: ", "Error, ingrese un id de tipo de coche valido: ", tipoServicios[0].id, tipoServicios[tamT-1].id, 10)  )
+            if ( !validarEntero(&auxMicro.idTipo, "Ingrese id de tipo de coche: ", "Error, ingrese un id de tipo de coche valido.\n ", tipoServicios[0].id, tipoServicios[tamT-1].id, 10)  )
             {
                 printf("\nError al ingresar id de tipo de coche, id ingresado por default: %d\n", tipoServicios[0].id);
                 auxMicro.idTipo = tipoServicios[0].id;
             }
 
-           if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ): ", 1, 50, 10)  )
+           if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ).\n ", 1, 50, 10)  )
             {
                 printf("\nError al ingresar la cantidad de pasajeros, cantidad ingresada por default: %d\n", 1);
                 auxMicro.capacidad = 1;

@@ -23,6 +23,7 @@ int main()
     int nextIdVIaje = 50000;
     eMicro lista[TAM];
     eViaje viajes[TAM_V];
+
     eEmpresa empresas[TAM_E] =
     {
         { 1000, "Plusmar" },
@@ -52,7 +53,14 @@ int main()
         printf("Error al iniciar micros\n");
     }
 
+    if ( !inicializarViajes(viajes, TAM_V) )
+    {
+        printf("Error al iniciar viajes\n");
+    }
+
     hardcodearMicros(lista, TAM, 8, &nextIdMicro);
+
+    hardcodearViajes(viajes, TAM_V, 4, &nextIdVIaje);
 
     do
     {
@@ -120,7 +128,7 @@ int main()
             }
             break;
         case 8:
-             if( !altaViaje(viajes, TAM_V, lista, TAM, empresas, TAM_E, tipos, TAM_T, destinos, TAM_D, &nextIdVIaje )  )
+            if( !altaViaje(viajes, TAM_V, lista, TAM, empresas, TAM_E, tipos, TAM_T, destinos, TAM_D, &nextIdVIaje )  )
             {
                 printf("No se pudo realizar el alta de viaje\n");
             }
@@ -130,7 +138,7 @@ int main()
             }
             break;
         case 9:
-             system("cls");
+            system("cls");
             if( !mostrarViajes(viajes, TAM_V, lista, TAM, empresas, TAM_E, destinos, TAM_D ) )
             {
                 printf("No se pudo mostrar los viajes\n");
