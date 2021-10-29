@@ -153,6 +153,8 @@ int menuModificar( eMicro lista[], int tam, int indice, eEmpresa empresas[], int
  */
 int cargarEmpresaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, int idMicro, char empresa[] );
 
+int validarMicroId( eMicro lista[], int tam, int id );
+
 
 
 #endif // MICRO_H_INCLUDED

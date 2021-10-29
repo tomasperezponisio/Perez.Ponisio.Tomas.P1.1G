@@ -199,7 +199,11 @@ int main()
                     break;
                 case 7:
 
-                    printf("Pedir un micro y mostrar todos los vuelos que hizo el mismo..\n");
+                   system("cls");
+                    if ( !informarViajesMicro(lista, TAM, empresas, TAM_E, tipos, TAM_T, destinos, TAM_D, viajes, TAM_V) )
+                    {
+                        printf("No se pudo mostrar menor cantidad de micros.\n");
+                    }
                     break;
                 case 8:
 

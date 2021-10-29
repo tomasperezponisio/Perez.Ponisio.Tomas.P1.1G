@@ -325,3 +325,64 @@ int informarEmpresaMenorCantidadMicros( eMicro lista[], int tam, eEmpresa empres
     return todoOk;
 
 }
+
+int informarViajesMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServicio tipoServicios[], int tamT, eDestino destinos[], int tamD, eViaje viajes[], int tamV )
+{
+
+    int todoOk = 0;
+    int idMicro;
+    if ( lista != NULL && tam > 0 && empresas != NULL && tamE > 0 && tipoServicios != NULL && tamT > 0 )
+    {
+        system("cls");
+        printf("               ***  Viajes por micro  ***\n");
+        printf("------------------------------------------------------------\n");
+
+        mostrarMicros(lista, tam, empresas, tamE, tipoServicios, tamT);
+
+        printf("\n");
+        printf("Ingrese id de auto: ");
+        scanf("%d", &idMicro);
+
+        while ( !validarMicroId(lista, tam, idMicro)  )
+        {
+            printf("Error, ingrese id de micro valido: ");
+            scanf("%d", &idMicro);
+        }
+
+
+
+        todoOk = 1;
+    }
+    return todoOk;
+}
+
+int informarViajeMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServicio tipoServicios[], int tamT, eDestino destinos[], int tamD, eViaje viajes[], int tamV, int idMicro )
+{
+    int todoOk = 0;
+    int flag = 1;
+
+    if ( lista != NULL && tam > 0 && empresas != NULL && tamE > 0 && tipoServicios != NULL && tamT > 0 )
+    {
+        system("cls");
+        printf("            ***   Viajes realizados por micro  ***\n");
+        printf("-------------------------------------------------------------------------------\n");
+        printf(" idTr.     Marca           Color           Servicio      Precio      Fecha\n");
+        printf("-------------------------------------------------------------------------------\n");
+        for (int i = 0; i < tamT; i++)
+        {
+            if (  viajes[i].isEmpty == 0 && viajes[i].idMicro == idMicro)
+            {
+                mostrarViaje(viajes[i], lista, tam, empresas, tamE, destinos, tamD);
+
+                flag = 0;
+            }
+        }
+        if (flag)
+        {
+            printf("   No se hizo viajes el micro seleccionado\n");
+        }
+        todoOk = 1;
+
+    }
+    return todoOk;
+}

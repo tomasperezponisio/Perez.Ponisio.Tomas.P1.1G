@@ -386,3 +386,21 @@ int cargarEmpresaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, 
     }
     return todoOk;
 }
+
+
+int validarMicroId( eMicro lista[], int tam, int id )
+{
+    int esValido = 0;
+    if (lista != NULL && tam > 0)
+    {
+        for (int i = 0; i < tam; i++)
+        {
+            if (lista[i].isEmpty == 0 && id == lista[i].id)
+            {
+                esValido = 1;
+                break;
+            }
+        }
+    }
+    return esValido;
+}
