@@ -57,9 +57,36 @@ int cargarDescripcionDestino( eDestino destinos[], int tamD, int idDestino, char
         }
         if (flag)
         {
-            todoOk = -1; // no habia marca con el id que le pasaron
+            todoOk = -1; // no habia destino con el id que le pasaron
         }
     }
     return todoOk;
 }
+
+int cargarPrecioDestino( eDestino destinos[], int tamD, int idDestino, int* precio )
+{
+    int todoOk = 0;
+    int flag = 1;
+
+    if (destinos != NULL && tamD > 0 && precio != NULL)
+    {
+        todoOk = 1;
+        for (int i = 0; i < tamD; i++)
+        {
+            if (destinos[i].id == idDestino)
+            {
+                *precio = destinos[i].precio;
+                flag = 0;
+                break;
+            }
+        }
+        if (flag)
+        {
+            todoOk = -1; // no habia precio con el id que le pasaron
+        }
+    }
+    return todoOk;
+}
+
+
 

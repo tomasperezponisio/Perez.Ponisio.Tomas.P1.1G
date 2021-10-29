@@ -8,6 +8,7 @@
 #include "tipoServicio.h"
 #include "destino.h"
 #include "viaje.h"
+#include "informes.h"
 
 #define TAM 10
 #define TAM_E 4
@@ -19,6 +20,8 @@ int main()
 {
     char seguir = 's';
     char salir;
+    char seguirInforme = 's';
+    char salirInforme;
     int nextIdMicro = 100;
     int nextIdVIaje = 50000;
     eMicro lista[TAM];
@@ -147,6 +150,91 @@ int main()
             {
                 printf("Mostrar viajes exitosa\n");
             }
+            break;
+        case 10:
+            do
+            {
+                switch(menuInformes())
+                {
+                case 1:
+                    system("cls");
+                    if ( !informarMicrosEmpresa(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar micros por empresa.\n");
+                    }
+                    break;
+                case 2:
+                    system("cls");
+                    if ( !informarMicrosTipo(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar micros por tipo de servicio.\n");
+                    }
+                case 3:
+                    system("cls");
+                    if ( !informarPorcentajeMicrosVip(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar micros por tipo de servicio.\n");
+                    }
+                    break;
+                case 4:
+                    system("cls");
+                    if ( !informarMicrosPorEmpresa(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar micros por Empresa.\n");
+                    }
+                    break;
+                case 5:
+                    system("cls");
+                    if ( !informarEmpresasMayorCapacidad(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar la mayor capacidad .\n");
+                    }
+                    break;
+                case 6:
+                    system("cls");
+                    if ( !informarEmpresaMenorCantidadMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+                    {
+                        printf("No se pudo mostrar menor cantidad de micros.\n");
+                    }
+                    break;
+                case 7:
+
+                    printf("Pedir un micro y mostrar todos los vuelos que hizo el mismo..\n");
+                    break;
+                case 8:
+
+                    printf("Pedir un micro e informar la suma de los precios (costo) de todos los vuelos que realizo.\n");
+                    break;
+                case 9:
+
+                    printf("Pedir un destino y mostrar los micros que viajaron a ese destino y en qué fecha.\n");
+                    break;
+                case 10:
+
+                    printf("Pedir una fecha y mostrar todos los viajes realizados en la misma.\n");
+                    break;
+                case 20:
+
+                    printf("Esta seguro que quiere salir? (S/N)\n");
+                    fflush(stdin);
+                    scanf("%c", &salirInforme);
+                    salirInforme = toupper(salirInforme);
+                    if (salirInforme == 'S')
+                    {
+                        seguirInforme = 'n';
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                    break;
+                default:
+                    printf("Opcion invalida\n");
+                }
+                system("pause");
+            }
+            while(seguirInforme == 's');
             break;
         case 20:
             printf("Esta seguro que quiere salir? (S/N)\n");

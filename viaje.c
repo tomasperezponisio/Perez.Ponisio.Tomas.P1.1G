@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "viaje.h"
+#include "fecha.h"
 
 int inicializarViajes( eViaje viajes[], int tamV )
 {
@@ -36,6 +37,8 @@ int altaViaje( eViaje viajes[], int tamV, eMicro lista[], int tam, eEmpresa empr
     int todoOk = 0;
     int indice;
     eViaje auxViaje;
+    eFecha auxFecha;
+
 
     if (viajes != NULL && tamV > 0 && lista != NULL && tam > 0 && empresas != NULL && tamE > 0 && tipoServicios != NULL && tamT > 0 && destinos != NULL && tamD > 0  && pIdViaje != NULL )
     {
@@ -69,8 +72,9 @@ int altaViaje( eViaje viajes[], int tamV, eMicro lista[], int tam, eEmpresa empr
                 scanf("%d", &auxViaje.idDestino);
             }
 
-            printf("Ingrese fecha: ");
-            scanf("%d/%d/%d", &auxViaje.fecha.dia, &auxViaje.fecha.mes, &auxViaje.fecha.anio);
+            pedirFecha(&auxFecha);
+            //auxFecha = pedirFecha();
+            auxViaje.fecha = auxFecha;
 
             auxViaje.isEmpty = 0;
 
@@ -86,14 +90,17 @@ void mostrarViaje( eViaje unViaje, eMicro lista[], int tam, eEmpresa empresas[],
 {
     char descEmpresa[20];
     char descDestino[20];
+    int precio;
 
     if ( cargarEmpresaMicro(lista, tam, empresas, tamE, unViaje.idMicro, descEmpresa) == 1 &&
-            cargarDescripcionDestino(destinos, tamD, unViaje.idDestino, descDestino) == 1 )
+            cargarDescripcionDestino(destinos, tamD, unViaje.idDestino, descDestino) == 1 &&
+            cargarPrecioDestino(destinos, tamD, unViaje.idDestino, &precio) == 1 )
     {
-        printf(" %d     %-10s        %-10s       %2d/%2d/%4d\n",
+        printf(" %d     %-10s        %-10s     $%8d      %2d/%2d/%4d\n",
                unViaje.id,
                descEmpresa,
                descDestino,
+               precio,
                unViaje.fecha.dia,
                unViaje.fecha.mes,
                unViaje.fecha.anio );
@@ -110,7 +117,7 @@ int mostrarViajes( eViaje viajes[], int tamV, eMicro lista[], int tam, eEmpresa 
         //system("cls");
         printf("                     ***Lista de Viajes  ***\n");
         printf("----------------------------------------------------------------------\n");
-        printf(" ID        Empresa Micro     Destino          Fecha\n");
+        printf(" ID        Empresa Micro     Destino         Precio         Fecha\n");
         printf("----------------------------------------------------------------------\n");
         for (int i = 0; i < tam; i++)
         {
@@ -127,5 +134,53 @@ int mostrarViajes( eViaje viajes[], int tamV, eMicro lista[], int tam, eEmpresa 
         }
         todoOk = 1;
     }
+    return todoOk;
+}
+
+/*eFecha pedirFecha()
+{
+    eFecha unaFecha;
+    int retorno;
+
+    printf("Ingrese fecha ( dd/mm/aaaa ): ");
+    fflush(stdin);
+    retorno = scanf("%d/%d/%d", &unaFecha.dia, &unaFecha.mes, &unaFecha.anio);
+
+    while (  !( retorno == 3 &&
+                ( unaFecha.dia >= 1 && unaFecha.dia <= 31) &&
+                ( unaFecha.mes >= 1 && unaFecha.mes <= 12) &&
+                ( unaFecha.anio >= 2000 && unaFecha.anio <= 2021) ) )
+    {
+        printf("Error, Reingrese la fecha en el formato correcto ( dd/mm/aaaa ): ");
+        fflush(stdin);
+        retorno = scanf("%d/%d/%d", &unaFecha.dia, &unaFecha.mes, &unaFecha.anio);
+    }
+    return unaFecha;
+}*/
+
+int pedirFecha(eFecha* unaFecha)
+{
+    int todoOk = 0;
+    int retorno;
+    eFecha auxFecha;
+    if (unaFecha != NULL)
+    {
+        printf("Ingrese fecha ( dd/mm/aaaa ): ");
+        fflush(stdin);
+        retorno = scanf("%d/%d/%d", &auxFecha.dia, &auxFecha.mes, &auxFecha.anio);
+
+        while (  !( retorno == 3 &&
+                    ( auxFecha.dia >= 1 && auxFecha.dia <= 31) &&
+                    ( auxFecha.mes >= 1 && auxFecha.mes <= 12) &&
+                    ( auxFecha.anio >= 2000 && auxFecha.anio <= 2021) ) )
+        {
+            printf("Error, Reingrese la fecha en el formato correcto ( dd/mm/aaaa ): ");
+            fflush(stdin);
+            retorno = scanf("%d/%d/%d", &auxFecha.dia, &auxFecha.mes, &auxFecha.anio);
+        }
+        *unaFecha = auxFecha;
+        todoOk = 1;
+    }
+
     return todoOk;
 }

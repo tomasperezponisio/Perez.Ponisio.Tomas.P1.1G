@@ -20,6 +20,7 @@ int menu()
     printf("  7- Listar Destinos\n");
     printf("  8- Alta Viaje\n");
     printf("  9- Listar Viajes\n");
+    printf("  10- Informes\n");
     printf("  20- Salir\n");
     printf("Ingrese opcion: ");
     fflush(stdin);
@@ -92,7 +93,7 @@ int altaMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipoServ
                 auxMicro.idTipo = tipoServicios[0].id;
             }
 
-           if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ).\n ", 1, 50, 10)  )
+            if ( !validarEntero(&auxMicro.capacidad, "Ingrese la cantidad de pasajeros ( 1 - 50 ) : ", "Error, ingrese una cantidad valida ( 1 - 50 ).\n ", 1, 50, 10)  )
             {
                 printf("\nError al ingresar la cantidad de pasajeros, cantidad ingresada por default: %d\n", 1);
                 auxMicro.capacidad = 1;
@@ -167,16 +168,16 @@ int ordenarMicros(eMicro lista[], int tam)
         for (int i = 0; i < tam -1; i++)
         {
             for (int j = i+1; j < tam; j++)
+            {
+                // ordeno por empresa y por capacidad
+                if( lista[i].idEmpresa < lista[j].idEmpresa ||
+                        (lista[i].idEmpresa == lista[j].idEmpresa && lista[i].capacidad > lista[j].capacidad) )
                 {
-                    // ordeno por empresa y por capacidad
-                    if( lista[i].idEmpresa < lista[j].idEmpresa ||
-                            (lista[i].idEmpresa == lista[j].idEmpresa && lista[i].capacidad > lista[j].capacidad) )
-                    {
-                        auxMicro = lista[i];
-                        lista[i] = lista[j];
-                        lista[j] = auxMicro;
-                    }
+                    auxMicro = lista[i];
+                    lista[i] = lista[j];
+                    lista[j] = auxMicro;
                 }
+            }
         }
     }
 
@@ -272,8 +273,13 @@ int modificarMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTip
                 {
                 case 1:
                     mostrarEmpresas(empresas, tamE);
-                    printf("Modificar id empresa: ");
-                    scanf("%d", &auxMicro.idEmpresa);
+
+                    if ( !validarEntero(&auxMicro.idEmpresa, "Modificar id empresa: ", "Error, ingrese un id de empresa valido.\n ", empresas[0].id, empresas[tamE-1].id, 10)  )
+                    {
+                        printf("\nError al ingresar id de Empresa, id ingresado por default: %d\n", empresas[0].id);
+                        auxMicro.idEmpresa = empresas[0].id;
+
+                    }
                     printf("Confirma cambio de id empresa? (S/N)\n");
                     fflush(stdin);
                     scanf("%c", &confirma);
@@ -289,8 +295,14 @@ int modificarMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTip
                     break;
                 case 2:
                     mostrarTipoServicio(tipoServicios, tamT);
-                    printf("Modificar id de tipo de servicio: ");
-                    scanf("%d", &auxMicro.idTipo);
+
+
+                    if ( !validarEntero(&auxMicro.idTipo, "Modificar id de tipo de servicio: ", "Error, ingrese un id de tipo de coche valido.\n ", tipoServicios[0].id, tipoServicios[tamT-1].id, 10)  )
+                    {
+                        printf("\nError al ingresar id de tipo de coche, id ingresado por default: %d\n", tipoServicios[0].id);
+                        auxMicro.idTipo = tipoServicios[0].id;
+                    }
+
                     printf("Confirma cambio de id de tipo de servicio? (S/N)\n");
                     fflush(stdin);
                     scanf("%c", &confirma);

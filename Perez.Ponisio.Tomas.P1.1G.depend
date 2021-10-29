@@ -8,13 +8,13 @@
 
 1634934420 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\bibliotecapersonal.h
 
-1634946255 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.c
+1635429592 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destino.h"
 
-1634939496 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.c
+1635370445 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.c
 
 1634941987 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\empresa.c
 	<stdio.h>
@@ -32,11 +32,12 @@
 
 1634941054 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tipo.h
 
-1634949453 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.c
+1635429892 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"viaje.h"
+	"fecha.h"
 
 1635101955 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\datawarehouse.c
 	<string.h>
@@ -54,7 +55,7 @@
 
 1634943060 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\tiposervicio.h
 
-1635101955 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\main.c
+1635549025 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -64,8 +65,9 @@
 	"tipoServicio.h"
 	"destino.h"
 	"viaje.h"
+	"informes.h"
 
-1635102505 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.c
+1635544464 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\micro.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -79,12 +81,26 @@
 	<string.h>
 	"tipoServicio.h"
 
-1634946250 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.h
+1635429435 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\destino.h
 
-1635101955 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.h
+1635429810 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\viaje.h
 	"fecha.h"
 	"micro.h"
 	"destino.h"
+	"fecha.h"
 
-1634939857 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.h
+1635370442 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\fecha.h
+
+1635549123 source:c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"informes.h"
+	"bibliotecaPersonal.h"
+
+1635548993 c:\users\tomas\google drive\_utn\laboratorio - programación i\perez.ponisio.tomas.p1.1g\informes.h
+	"micro.h"
+	"empresa.h"
+	"tipoServicio.h"
 
