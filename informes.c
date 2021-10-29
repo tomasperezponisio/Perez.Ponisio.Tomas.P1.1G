@@ -349,7 +349,7 @@ int informarViajesMicro( eMicro lista[], int tam, eEmpresa empresas[], int tamE,
             scanf("%d", &idMicro);
         }
 
-
+        informarViajeMicro(lista, tam, empresas, tamE, tipoServicios, tamT, destinos, tamD, viajes, tamV, idMicro);
 
         todoOk = 1;
     }
